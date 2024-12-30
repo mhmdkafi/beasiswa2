@@ -25,7 +25,7 @@
                     <div class="flex items-center space-x-2">
                         <button id="profile" onclick="toggleDropdown()"
                             class="flex items-center justify-center w-8 h-8 bg-white rounded-full hover:cursor-pointer">
-                            <i class="fa-solid fa-user"></i>
+                            <img src="{{asset('img/profile/'. auth()->user()->image)}}" alt="" class="rounded-full">
                         </button>
                         <p class="text-white font-medium bold">Halo, {{auth()->user()->first_name}}</p>
                     </div>
@@ -88,7 +88,7 @@
             </div>
             @endif
 
-            @if(auth()->user()->ipk >= $beasiswa->min_ipk)
+            @if(auth()->user()->ipk >= $beasiswa->ipk)
             <div class="p-4 w-full text-center">
                 <a href="{{route('scholarship.apply',$beasiswa->id)}}"
                     class="p-4 text-white bg-gray-500 rounded-full font-bold">DAFTAR

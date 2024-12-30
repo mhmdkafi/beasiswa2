@@ -18,8 +18,6 @@ return new class extends Migration {
             $table->string('email')->unique();
             $table->string('phone');
             $table->double('ipk')->nullable();
-            $table->double('min_ipk')->nullable();
-            $table->double('max_ipk')->nullable();
             $table->double('toefl')->nullable();
             $table->string('image')->nullable();
             $table->timestamp('email_verified_at')->nullable();

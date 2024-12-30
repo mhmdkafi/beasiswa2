@@ -124,8 +124,6 @@
                         <td class="border px-4 py-2">{{$user->phone}}</td>
                         <td class="border px-4 py-2">
                             <p>IPK : {{$user->ipk}}</p>
-                            <p>Min. IPK : {{$user->min_ipk}}</p>
-                            <p>Max. IPK : {{$user->max_ipk}}</p>
                             <p>TOEFL : {{$user->toefl}}</p>
                         </td>
                         <td class="border px-4 py-2 text-center">{{$user->is_admin ? 'Admin' : 'User'}}</td>

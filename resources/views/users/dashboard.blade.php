@@ -24,10 +24,17 @@
             <div class="flex flex-row justify-between items-center">
                 <div class="relative">
                     <div class="flex items-center space-x-2">
+                        @if(auth()->user()->image)
+                        <button id="profile" onclick="toggleDropdown()"
+                            class="flex items-center justify-center w-8 h-8 bg-white rounded-full hover:cursor-pointer">
+                            <img src="{{asset('img/profile/'. auth()->user()->image)}}" alt="" class="rounded-full">
+                        </button>
+                        @else
                         <button id="profile" onclick="toggleDropdown()"
                             class="flex items-center justify-center w-8 h-8 bg-white rounded-full hover:cursor-pointer">
                             <i class="fa-solid fa-user"></i>
                         </button>
+                        @endif
                         <p class="text-white font-medium bold">Halo, {{auth()->user()->first_name}}</p>
                     </div>
                     <!-- Dropdown menu -->
@@ -75,25 +82,17 @@
             </form>
 
             {{-- list nilai dari user --}}
-            <div
-                class="grid grid-cols-4 items-center justify-between py-4 mt-4 border border-gray-300 bg-[#113F67] rounded-xl divide-x-2">
+            <div class="grid grid-cols-2 items-center justify-center py-4 mt-4 border border-gray-300 bg-[#113F67] rounded-xl divide-x-2">
                 <div class="flex flex-col items-center justify-center text-white font-medium">
-                    <p>{{auth()->user()->ipk}}</p>
+                    <p>{{ auth()->user()->ipk }}</p>
                     <span>IPK</span>
                 </div>
                 <div class="flex flex-col items-center justify-center text-white font-medium">
-                    <p>{{auth()->user()->min_ipk}}</p>
-                    <span>MIN IPK</span>
-                </div>
-                <div class="flex flex-col items-center justify-center text-white font-medium">
-                    <p>{{auth()->user()->max_ipk}}</p>
-                    <span>MAX IPK</span>
-                </div>
-                <div class="flex flex-col items-center justify-center text-white font-medium">
-                    <p>{{auth()->user()->toefl}}</p>
+                    <p>{{ auth()->user()->toefl }}</p>
                     <span>TOEFL</span>
                 </div>
             </div>
+
 
             {{-- List beasiswa --}}
             <div class="flex flex-col mt-4">

@@ -101,24 +101,17 @@
             </div>
             <div class="relative flex flex-col w-full bg-[#F5F5F5] p-4">
                 <p class="font-medium text-lg mb-4">List IPK & TOEFL</p>
-                <div class="flex flex-wrap justify-between gap-4">
+                <div class="flex justify-center items-center text-center space-x-12 p-4 bg-gray-100 rounded-md">
                     <div>
-                        <p class="font-medium">IPK</p>
-                        <p class="text-gray-600">{{auth()->user()->ipk ?? '-'}}</p>
+                        <p class="font-medium text-lg">IPK</p>
+                        <p class="text-gray-600 text-xl">{{ auth()->user()->ipk ?? '-' }}</p>
                     </div>
                     <div>
-                        <p class="font-medium">Min. IPK</p>
-                        <p class="text-gray-600">{{auth()->user()->min_ipk ?? '-'}}</p>
-                    </div>
-                    <div>
-                        <p class="font-medium">Max. IPK</p>
-                        <p class="text-gray-600">{{auth()->user()->max_ipk ??'-'}}</p>
-                    </div>
-                    <div>
-                        <p class="font-medium">TOEFL</p>
-                        <p class="text-gray-600">{{auth()->user()->toefl ?? '-'}}</p>
+                        <p class="font-medium text-lg">TOEFL</p>
+                        <p class="text-gray-600 text-xl">{{ auth()->user()->toefl ?? '-' }}</p>
                     </div>
                 </div>
+
                 <button data-modal="ipkModal" class="absolute top-4 right-4 px-2 bg-gray-400 font-medium">Edit</button>
             </div>
         </div>
@@ -211,18 +204,8 @@
                                     class="mt-1 block w-full rounded-md border-gray-300">
                             </div>
                             <div>
-                                <label class="block text-sm font-medium text-gray-700">Min. IPK</label>
-                                <input type="number" step="0.01"  min="0" max="4" name="min_ipk" value="{{ auth()->user()->min_ipk }}"
-                                    class="mt-1 block w-full rounded-md border-gray-300">
-                            </div>
-                            <div>
-                                <label class="block text-sm font-medium text-gray-700">Max. IPK</label>
-                                <input type="number" step="0.01"  min="0" max="4" name="max_ipk" value="{{ auth()->user()->max_ipk }}"
-                                    class="mt-1 block w-full rounded-md border-gray-300">
-                            </div>
-                            <div>
                                 <label class="block text-sm font-medium text-gray-700">TOEFL Score</label>
-                                <input type="number" name="toefl" min="0" value="{{ auth()->user()->toefl }}"
+                                <input type="number" name="toefl" min="0" max="677" value="{{ auth()->user()->toefl }}"
                                     class="mt-1 block w-full rounded-md border-gray-300">
                             </div>
                         </div>

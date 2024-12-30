@@ -58,6 +58,10 @@ class BeasiswaController extends Controller
             'penghasilan_orang_tua' => 'required|numeric'
         ]);
 
+        $cekExist = PendaftarBeasiswa::where('user_id',auth()->user()->id)->where
+        ('beasiswa_id', $beasiswa->id)->first();
+
+
         $validated = $request->all();
 
 

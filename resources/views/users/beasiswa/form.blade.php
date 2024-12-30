@@ -28,7 +28,7 @@
                     <div class="flex items-center space-x-2">
                         <button id="profile" onclick="toggleDropdown()"
                             class="flex items-center justify-center w-8 h-8 bg-white rounded-full hover:cursor-pointer">
-                            <i class="fa-solid fa-user"></i>
+                            <img src="{{asset('img/profile/'. auth()->user()->image)}}" alt="" class="rounded-full">
                         </button>
                         <p class="text-white font-medium bold">Halo, {{auth()->user()->first_name}}</p>
                     </div>

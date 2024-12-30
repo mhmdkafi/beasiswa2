@@ -122,7 +122,7 @@
                         <td class="border px-4 py-2 text-center">{{$loop->iteration}}</td>
                         <td class="border px-4 py-2">{{$beasiswa->nama}}</td>
                         <td class="border px-4 py-2">{{$beasiswa->instansi}}</td>
-                        <td class="border px-4 py-2">#</td>
+                        <td class="border px-4 py-2">{{$beasiswa->penerima->count()}}</td>
                         <td class="border px-4 py-2 text-center">
                             <div class="flex flex-col sm:flex-row gap-2 justify-center">
                                 <button onclick="openModal('editBeasiswaModal', {{$beasiswa->id}})"
