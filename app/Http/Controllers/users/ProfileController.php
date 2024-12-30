@@ -56,14 +56,16 @@ class ProfileController extends Controller
         return redirect()->back()->with('success', 'Personal information updated successfully');
     }
 
+    
     public function updateIPK(Request $request)
     {
         $request->validate([
-            'ipk' => 'required|numeric',
-            'min_ipk' => 'required|numeric',
-            'max_ipk' => 'required|numeric',
+            'ipk' => 'required|numeric|min:0|max:4',
+            'min_ipk' => 'required|numeric|min:0|max:4',
+            'max_ipk' => 'required|numeric|min:0|max:4',
             'toefl' => 'required|numeric',
         ]);
+        
 
         auth()->user()->update($request->all());
 

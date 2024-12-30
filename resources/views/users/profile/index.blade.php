@@ -207,22 +207,22 @@
                         <div class="space-y-4">
                             <div>
                                 <label class="block text-sm font-medium text-gray-700">IPK</label>
-                                <input type="number" step="0.01" name="ipk" value="{{ auth()->user()->ipk }}"
+                                <input type="number" step="0.01" min="0" max="4" name="ipk" value="{{ auth()->user()->ipk }}"
                                     class="mt-1 block w-full rounded-md border-gray-300">
                             </div>
                             <div>
                                 <label class="block text-sm font-medium text-gray-700">Min. IPK</label>
-                                <input type="number" step="0.01" name="min_ipk" value="{{ auth()->user()->min_ipk }}"
+                                <input type="number" step="0.01"  min="0" max="4" name="min_ipk" value="{{ auth()->user()->min_ipk }}"
                                     class="mt-1 block w-full rounded-md border-gray-300">
                             </div>
                             <div>
                                 <label class="block text-sm font-medium text-gray-700">Max. IPK</label>
-                                <input type="number" step="0.01" name="max_ipk" value="{{ auth()->user()->max_ipk }}"
+                                <input type="number" step="0.01"  min="0" max="4" name="max_ipk" value="{{ auth()->user()->max_ipk }}"
                                     class="mt-1 block w-full rounded-md border-gray-300">
                             </div>
                             <div>
                                 <label class="block text-sm font-medium text-gray-700">TOEFL Score</label>
-                                <input type="number" name="toefl" value="{{ auth()->user()->toefl }}"
+                                <input type="number" name="toefl" min="0" value="{{ auth()->user()->toefl }}"
                                     class="mt-1 block w-full rounded-md border-gray-300">
                             </div>
                         </div>
